@@ -319,12 +319,12 @@ class HomePage extends Component {
            }
        })
     }
-    
+
 
     render() {
 
       const closeBtn = <Button onClick={this.toggle} color="secondary">{"Close (X)"}</Button>
-      
+
       /*
         Make sign up warning and login warning in store and if success, call searchDisplay or toggleSearchDisplay.
         Whateva
@@ -364,16 +364,27 @@ class HomePage extends Component {
               />
                 </div>*/}
 
-             <Button onClick={this.props.toggle} style={{ margin: "0 auto" }} color="secondary">Enter</Button>
-             
+             {/*TODO: uncomment this: <Button onClick={this.props.toggle} style={{ margin: "0 auto" }} color="secondary">Enter</Button>*/}
+
          </div>
          <div style={{display: "flex", marginTop: "1%"}}>
-             
 
-             
+{/*TODO: Delete this later to make site functional; start block*/}
+
+        <Button style={{ margin: "0 auto"}} color = "secondary" onClick={() => this.tempDialog.show()}>Enter</Button>
+        <SkyLight hideOnOverlayClicked ref={ref => this.tempDialog = ref} title="Welcome to Chimera Wearables!">
+
+        <br/>
+        Site Under Maintenance
+
+        </SkyLight>
+
+{/*end block*/}
+
+
           <Button style={{ margin: "0 auto"}} color = "secondary" onClick={() => this.simpleDialog.show()}>Watch Tutorial</Button>
         <SkyLight hideOnOverlayClicked ref={ref => this.simpleDialog = ref} title="Welcome to Chimera Wearables!">
-          
+
         <video src={tutorial} width="100%" height="100%" controls = "controls" />
 
         </SkyLight>
